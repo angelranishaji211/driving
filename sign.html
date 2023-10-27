@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Driving School</title>
+
+
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/main.js"></script>
+
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+
+<link href="//fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+<body>
+    <div class="container" style="margin-left:93px; margin-bottom:10%;padding-left:130px; box-shadow: 2px 2px 10px #1b93e1; border-radius: 4px; top: 14px; margin-top: 3%;">
+        <h2 style="text-align: center;margin-top: 6%;font-family: fantasy;">CREATE NEW ACCOUNT</h2>
+
+    <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Student register number</label>
+      </div>
+      <div class="col-md-6">
+     
+        <input type="text" pattern="^[A-Za_z][A-Za-z -]+$" class="form-control" name="txt_name" style="width:500px;" placeholder="Enter Register Number" required>
+     </div>      
+     </div>
+    <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Name</label>
+      </div>
+      <div class="col-md-6">
+       <input type="text" pattern="^[A-Za_z][A-Za-z -]+$" class="form-control" name="txt_name" style="width:500px;" placeholder="Enter Name" required>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>House Name</label>
+      </div>
+      <div class="col-md-6">
+       <input type="text" pattern="^[A-Za_z][A-Za-z -]+$" class="form-control" name="txt_housename" style="width:500px;" placeholder="Enter housename" required>
+        
+      </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Place </label>
+      </div>
+      <div class="col-md-6">
+        <input type="text" pattern="^[A-Za_z][A-Za-z -]+$" class="form-control" name="txt_place" style="width:500px;" placeholder="Enter place" required>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Contact</label>
+      </div>
+      <div class="col-md-6">
+        <input type="tel"  pattern="[0-9]{10}" class="form-control" name="txt_contact" style="width:500px;" placeholder="Enter contact" required>
+      </div>
+    </div>
+     <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Pincode</label>
+      </div>
+      <div class="col-md-6">
+        <input type="text"  pattern="[0-9]{6}" class="form-control" name="txt_pincode" style="width:500px;" placeholder="Enter pincode" required>
+      </div>
+    </div>
+      <br>
+    <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Gender</label>
+      </div>
+      <div class="col-md-6">
+        <input type="radio" name="rbgender" value="Male" checked>Male
+        <input type="radio" name="rbgender" value="Female" >Female
+              </div>
+    </div>
+    <br>
+    
+    <input type="hidden" name="txt_currenthidden" id="txt_currenthidden" value="<?php echo date('Y-m-d') ?>" class="form-control" style="width:500px;" placeholder="Enter DOB" required>
+     <div class="row">
+      <div class="col-md-3" style="text-align:right">
+        <label >Date Of Birth</label>
+      </div>
+      <div class="col-md-3">
+       <input type="date" name="txt_dob" id="txt_dob" value="<?php echo date('Y-m-d') ?>" class="form-control" style="width:500px;" placeholder="Enter DOB" required>
+      </div>
+    </div><br>
+     <div class="row">
+     <div class="col-md-3" style="text-align:right">
+        <label>Learners License Image</label>
+      </div>
+      <div class="col-md-6">
+        <input type="file" class="form-control" name="imgmark" required >
+      </div>
+    </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3" style="text-align:right">
+          <label>Email</label>
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" name="txt_email" style="width:500px;" placeholder="Enter email" required="">
+      </div>
+      </div>
+      
+    <br>
+      <div class="row">
+        <div class="col-md-3" style="text-align:right">
+          <label>Password</label>
+        </div>
+        <div class="col-md-6">
+          <input type="password" class="form-control" name="txt_password" style="width:500px;" placeholder="Enter password" required="">
+      </div>
+      </div>
+      <br>
+     <script>
+    var tt = document.getElementById('txt_currenthidden').value;
+    var date = new Date(tt);
+    var newdate = new Date(date);
+
+    newdate.setDate(newdate.getDate() - 6575);
+
+    var dd = newdate.getDate();
+    var mm = newdate.getMonth() + 1;
+    var y = newdate.getFullYear();
+
+	var someFormattedDate = y + '-' + mm + '-' + dd;
+	//alert(someFormattedDate);
+    document.getElementById('txt_dob').max =someFormattedDate;
+     </script>
+     
+    
+       <div class="row">
+      <div class="col-md-3" style="text-align:right">
+        <label >Date Of Registration</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="txt_dor" class="form-control" style="width:500px;" value="<?php echo $date?>" readonly>
+      </div>
+    </div>
+   
+     <div class="row" style="  margin-top:2%;">
+  
+      <input type="submit" name="submit" value="Register" class="btn btn-primary" style="margin-left:54%">
+      <input type="reset" name="submit" value="Cancel" class="btn btn-warning" style="margin-left:63%;    margin-top: -3%;">
+    </div>
+    <br>
+    </div>
+</form>
+
+</body>
